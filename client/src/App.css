@@ -1,0 +1,6 @@
+.active {
+  background-image: url("./assets/images/WelcomeBackground.jpg");
+  border-radius: 10px;
+  color: black;
+}
+
