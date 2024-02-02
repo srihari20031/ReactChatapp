@@ -1,5 +1,4 @@
 import Ninchat from "../assets/images/Reactchatlogo.png";
-import Profile from "../assets/images/Profile.jpg";
 import Chats from "./Chats";
 import { signOut } from "firebase/auth";
 import { auth } from "../config/Firebase.config";
