@@ -31,6 +31,7 @@ const Search = () => {
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         setUser(doc.data());
+        
       });
     } catch (err) {
       setErr(true);
@@ -83,7 +84,7 @@ const Search = () => {
           [combinedId + ".date"]: serverTimestamp(),
         });
 
-        console.log(combinedId + ".userInfo");
+        
       }
     } catch (err) {
       console.log(err);
@@ -91,7 +92,7 @@ const Search = () => {
     setUser(null);
     setUsername("");
   };
-
+  
   return (
     <div>
       <input
@@ -116,7 +117,8 @@ const Search = () => {
             />
             <div className="flex flex-col">
               <h1 className="text-xl text-white">{user.displayName}</h1>
-              <p className="text-white">Hello</p>
+              <p className="text-white">{user.message}</p>
+            
             </div>
           </div>
         </div>

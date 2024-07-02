@@ -13,7 +13,6 @@ const Login = () => {
     e.preventDefault();
     const email = e.target[0].value;
     const password = e.target[1].value;
-    console.log(email, password);
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
@@ -74,9 +73,7 @@ const Login = () => {
               {"Sign up"}
             </Link>
           </div>
-          {err && (
-            <p className="mt-5 text-red-700">Something went Wrong!!!!!</p>
-          )}
+          {err && <p className="mt-5 text-red-700">Please enter valid credentials</p>}
         </form>
       </div>
     </div>

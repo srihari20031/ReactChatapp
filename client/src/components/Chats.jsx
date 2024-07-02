@@ -19,34 +19,38 @@ const Chats = () => {
         unsub();
       };
     };
-
     currentuser.uid && getChats();
   }, [currentuser.uid]);
 
   const handleSelect = (u) => {
     dispatch({ type: "CHANGE_USER", payload: u });
   };
+
   return (
-    <div className="">
-      {Object.entries(chats)?.sort((a,b) => b[1].date - a[1].date).map((chat) => (
-        <div
-          className="p-2 flex gap-4 items-center hover:bg-[rgb(31,41,55)]"
-          key={chat[0]}
-          onClick={() => handleSelect(chat[1].userInfo)}
-        >
-          <img
-            src={chat[1].userInfo.photoUrl}
-            alt=""
-            className="w-[60px] h-[60px] rounded-[50%]"
-          />
-          <div className="flex flex-col">
-            <h1 className="text-xl text-white">
-              {chat[1].userInfo.displayName}
-            </h1>
-            <p className="text-white">{chat[1].lastMessage?.text}</p>
+    <div>
+      {Object?.entries(chats || {})
+        .sort((a, b) => b[1].date - a[1].date)
+        .map((chat) => (
+          <div
+            className="p-2 flex gap-4 items-center hover:bg-[rgb(31,41,55)]"
+            key={chat[0]}
+            onClick={() => {
+              handleSelect(chat[1].userInfo);
+            }}
+          >
+            <img
+              src={chat[1]?.userInfo.photoUrl}
+              alt="photo"
+              className="w-[60px] h-[60px] rounded-[50%]"
+            />
+            <div className="flex flex-col">
+              <h1 className="text-xl text-white">
+                {chat[1].userInfo.displayName}
+              </h1>
+              <p className="text-white">{chat[1].lastMessage?.text}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </div>
   );
 };

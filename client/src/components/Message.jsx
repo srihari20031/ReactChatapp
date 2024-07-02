@@ -26,8 +26,8 @@ const Message = ({ message }) => {
         <img
           src={
             message.senderId === currentuser.uid
-              ? currentuser.photoURL
-              : data.user.photoURL
+              ? currentuser.photoUrl
+              : data.user.photoUrl
           }
           alt=""
           className="w-[50px] h-[50px] rounded-[50%]"
