@@ -84,13 +84,14 @@ const Signup = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center mt-40">
-      <div className="flex flex-col items-center justify-center gap-10 inner-div w-[30%]">
+      <div className="flex flex-col items-center justify-center gap-10 inner-div ">
         <h1 className="text-2xl">Sign Up</h1>
         <form
           action="/login"
           method="post"
           className="flex flex-col items-center"
           onSubmit={handleSubmit}
+          
         >
           <input
             required

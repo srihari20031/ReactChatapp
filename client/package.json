@@ -13,6 +13,7 @@
     "@iconscout/react-unicons": "^2.0.2",
     "@mui/icons-material": "^5.15.5",
     "firebase": "^10.7.2",
+    "firebase-cli": "^1.2.0",
     "firestore": "^1.1.6",
     "prop-types": "^15.8.1",
     "proptypes": "^1.1.0",
